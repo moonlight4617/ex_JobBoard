@@ -12,10 +12,21 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
+
+    protected $user_route  = 'user.login';
+    protected $shop_route = 'shop.login';
+
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+        // if (in_array('admin', $exception->guards(), true)) {
+        //     return redirect()->guest(route('admin.login'));
+        // }
+        if (!$request->expectsJson()) {
+            if (Route::is('user.*')) {
+                return route($this->user_route);
+            } elseif (Route::is('admin.*')) {
+                return route($this->admin_route);
+            }
         }
     }
 }

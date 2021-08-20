@@ -70,4 +70,10 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+
+    // Userのリダイレクト先
+    public const HOME = '/user/home';
+
+    // Shopのリダイレクト先
+    public const SHOP_HOME = '/shop/home';
 }
