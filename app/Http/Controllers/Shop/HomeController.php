@@ -26,4 +26,10 @@ class HomeController extends Controller
     {
         return view('shop.home');
     }
+
+    public function job_create($id)
+    {
+        $shop = Shop::find($id);
+        return view('shop.job_create');
+    }
 }

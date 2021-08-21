@@ -38,8 +38,9 @@ Route::namespace('Shop')->prefix('shop')->name('shop.')->group(function () {
         // TOPページ
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
+        Route::get('{id}/job_create', 'HomeController@job_create')->name('job_create');
     });
-
+    
 });
 
 // 認証不要

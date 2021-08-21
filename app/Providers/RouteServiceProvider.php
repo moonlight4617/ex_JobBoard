@@ -75,5 +75,5 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/user/home';
 
     // Shopのリダイレクト先
-    public const SHOP_HOME = '/shop/home';
+    public const SHOP_HOME = '/shop/{id}/job_create';
 }
